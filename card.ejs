@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="static/bootstrap.min.css">
+		<script type="text/javascript" src="static/jquery.min.js"></script>
+		<script type="text/javascript" src="static/bootstrap.min.js"></script>
+		<style type="text/css">
+			html, body {
+				background-color: white;
+			}
+			.card {
+				zoom: <%= zoom %>;
+				margin: <%= margin %>px;
+				width: 265px;
+				height: 370px;
+				border: 13px black solid;
+				background-color: white;
+				padding: 4px 8px;
+			}
+			.card .header {
+				position: relative;
+				height: 20px;
+				overflow: hidden;
+				white-space: nowrap;
+				font-weight: bold;
+			}
+			.card .header .cost {
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding-left: 2px;
+				background-color: white;
+			}
+			.card .image {
+				width: 222px;
+				max-height: 163px;
+				height: 163px;
+				text-align: center;
+				border: 2px black solid;
+				font-size: 45px;
+				line-height: 45px;
+				display: table-cell;
+				vertical-align: middle;
+			}
+			.card .image.small {
+				font-size: 35px;
+				line-height: 45px
+			}
+			.card .image.smaller {
+				font-size: 25px;
+				line-height: 35px;
+			}
+			.card .middle {
+				position: relative;
+				height: 20px;
+				overflow: hidden;
+				white-space: nowrap;
+				font-weight: bold;
+			}
+			.card .middle .set {
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding-left: 2px;
+				background-color: white;
+			}
+			.card .type.small {
+				margin-top: 2px;
+				font-size: 11px;
+			}
+			.card .text {
+				width: 222px;
+				height: 117px;
+				border: 2px black solid;
+				padding: 2px;
+			}
+			.card .text.small {
+				font-size: 11px;
+			}
+			.card .text.smaller {
+				font-size: 10px;
+			}
+			.card .text.smallest {
+				font-size: 9px;
+			}
+			.card .text.andthensome {
+				font-size: 7px;
+			}
+			.card .text .tap {
+				width: 11px;
+				height: 11px;
+				background-image: url(tap.png);
+				display: inline-block;
+			}
+			.card .text.small .tap,
+			.card .text.smaller .tap {
+				width: 8px;
+				height: 8px;
+				background-size: 8px
+			}
+			.card .text.smallest .tap,
+			.card .text.andthensome .tap {
+				width: 5px;
+				height: 5px;
+				background-size: 5px
+			}
+			.card .number {
+				margin-top: 2px;
+				font-size: 10px;
+			}
+			.card .strength {
+				font-weight: bold;
+				width: 43px;
+				height: 22px;
+				border: 2px solid black;
+				margin: -10px 10px 0 0;
+				background-color: white;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="card">
+			<div class="header">
+				<div class="title"><%= card.name %></div>
+				<div class="cost"><%= card.manaCost %></div>
+			</div>
+			<div class="image <%= card.setName.indexOf(' ') > -1 ? 'multiword' : '' %> <%= card.setName.length > 20 ? 'smaller' : (card.setName.length > 10 ? 'small' : '') %>">
+				<%= card.setName %>
+			</div>
+			<div class="middle">
+				<div class="type <%= card.type.length > 25 ? 'small' : '' %>"><%= card.type %></div>
+				<div class="set"><%= card.rarity[0] %></div>
+			</div>
+			<div class="text <%= card.text.length > 320 ? 'andthensome' : (card.text.length > 250 ? 'smallest' : (card.text.length > 150 ? 'smaller' : (card.text.length > 100 ? 'small' : ''))) %>"><%- card.text %></div>
+			<div class="number pull-left <%= card.number || 'hidden' %>">#<%= card.number || '' %></div>
+			<div class="strength pull-right <%= card.strength || 'hidden' %>"><%= card.strength || '' %></div>
+		</div>
+	</body>
+</html>
