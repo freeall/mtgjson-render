@@ -1,6 +1,6 @@
 {
   "name": "mtgjson-render",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A node.js module for create an image of a  Magic: The Gathering card based on the data from mtgjson.com",
   "main": "index.js",
   "dependencies": {},
