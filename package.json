@@ -3,8 +3,7 @@
   "version": "0.1.1",
   "description": "A node.js module for create an image of a  Magic: The Gathering card based on the data from mtgjson.com",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "pejs": "^0.6.5",
     "phantom-render-stream": "^0.5.0"
   },
