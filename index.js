@@ -22,9 +22,9 @@ module.exports = function(options) {
 	return function(card, options, callback) {
 		if (!callback) {
 			callback = options;
-			options {}
+			options = {}
 		}
-		
+
 		if (card.power && card.toughness) card.strength = card.power + '/' + card.toughness;
 		if (card.loyalty) card.strength = card.loyalty;
 
