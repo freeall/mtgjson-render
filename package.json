@@ -2,6 +2,7 @@
   "name": "mtgjson-render",
   "version": "0.1.2",
   "description": "A node.js module for create an image of a  Magic: The Gathering card based on the data from mtgjson.com",
+  "keywords": ["magic", "the", "gathering", "mtg", "render", "png", "generate", "image", "images"],
   "main": "index.js",
   "dependencies": {
     "pejs": "^0.6.5",
